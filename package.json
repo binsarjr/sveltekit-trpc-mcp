@@ -1,0 +1,44 @@
+{
+  "name": "@binsarjr/trpc-sveltekit-mcp",
+  "version": "1.0.0",
+  "description": "MCP server for tRPC SvelteKit development with curated knowledge and examples",
+  "type": "module",
+  "main": "dist/index.js",
+  "bin": "dist/index.js",
+  "files": [
+    "dist/**/*",
+    "src/data/**/*",
+    "README.md",
+    "package.json"
+  ],
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "build": "tsc && cp -r src/data dist/ && chmod +x dist/index.js",
+    "start": "bun src/index.ts",
+    "prepublishOnly": "npm run build",
+    "inspect": "bunx @modelcontextprotocol/inspector bun src/index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "trpc",
+    "sveltekit",
+    "typescript",
+    "api",
+    "type-safe",
+    "development",
+    "assistant"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.0",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.22",
+    "typescript": "^5.9.2"
+  },
+  "engines": {
+    "bun": ">=1.0.0"
+  }
+}
